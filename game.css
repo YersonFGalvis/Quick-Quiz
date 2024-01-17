@@ -1,0 +1,105 @@
+.choice-container {
+    display: flex;
+    margin-bottom: 0.8rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: 0.1rem solid rgb(44, 62, 80, 0.25); /* Gris oscuro */
+    background-color: #ECF0F1; /* Gris claro */
+}
+
+.choice-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(44, 62, 80, 0.5); /* Gris oscuro */
+    transform: translateY(-0.5rem) translateX(0.5rem);
+    transition: transform 150ms;
+}
+
+.choice-prefix {
+    padding: 1.5rem 2.5rem;
+    background-color: #3498DB; /* Azul oscuro */
+    color: #ECF0F1; /* Gris claro */
+}
+
+.choice-text {
+    padding: 1.5rem;
+    width: 100%;
+    color: black;
+}
+
+.correct {
+    background-color: #2ECC71; /* Verde oscuro */
+}
+
+.incorrect {
+    background-color: #E74C3C; /* Rojo oscuro */
+}
+
+/* HUD */
+
+#hud {
+    display: flex;
+    justify-content: space-around;
+}
+
+.hud-prefix {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.hud-main-text {
+    text-align: center;
+}
+
+#progressBar {
+    width: 20rem;
+    height: 4rem;
+    border: 0.3rem solid #3498DB; /* Azul oscuro */
+}
+
+#progressBarFull {
+    height: 3.5rem;
+    background-color: #3498DB; /* Azul oscuro */
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+
+/*  LOADER */
+
+#loader {
+    width: 45px;
+    aspect-ratio: 1;
+    --c: no-repeat linear-gradient(#3498DB 0 0);
+    background: 
+      var(--c) 0%   50%,
+      var(--c) 50%  50%,
+      var(--c) 100% 50%;
+    background-size: 20% 100%;
+    animation: l1 1s infinite linear;
+  }
+  @keyframes l1 {
+    0%  {background-size: 20% 100%,20% 100%,20% 100%}
+    33% {background-size: 20% 10% ,20% 100%,20% 100%}
+    50% {background-size: 20% 100%,20% 10% ,20% 100%}
+    66% {background-size: 20% 100%,20% 100%,20% 10% }
+    100%{background-size: 20% 100%,20% 100%,20% 100%}
+  }
+
+
+/* Media Queries for Responsive Design */
+
+@media only screen and (max-width: 768px) {
+    .choice-prefix {
+        padding: 1rem 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    .choice-text {
+        padding: 1rem;
+    }
+
+    #hud {
+        flex-direction: column;
+        align-items: center;
+    }
+}
